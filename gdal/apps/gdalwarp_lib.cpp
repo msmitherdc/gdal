@@ -598,9 +598,9 @@ static GDALDatasetH ApplyVerticalShiftGrid( GDALDatasetH hWrkSrcDS,
 
             if (pszSrcProj4Geoids == nullptr || pszDstProj4Geoids == nullptr) {
                 const char *pszSrcProj4Geoids =
-                    oSRSSrc.GetExtension( "VERT_DATUM", "GEOIDMODEL" );
+                    oSRSSrc.GetExtension( "VERTCRS", "GEOIDMODEL" );
                 const char *pszDstProj4Geoids =
-                    oSRSDst.GetExtension( "VERT_DATUM", "GEOIDMODEL" );
+                    oSRSDst.GetExtension( "VERTCRS", "GEOIDMODEL" );
 
             // OGRCoordinateTransformationOptions options;
             //  ListCoordinateOperations(oSRSSrc,  oSRSDst,  options );
