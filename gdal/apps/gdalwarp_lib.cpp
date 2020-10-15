@@ -596,6 +596,18 @@ static GDALDatasetH ApplyVerticalShiftGrid( GDALDatasetH hWrkSrcDS,
             const char *pszDstProj4Geoids =
                 oSRSDst.GetExtension( "VERT_DATUM", "PROJ4_GRIDS" );
 
+
+            GEOIDMODEL
+            if (pszSrcProj4Geoids == nullptr || pszDstProj4Geoids == nullptr) {
+                const char *pszSrcProj4Geoids =
+                    oSRSSrc.GetExtension( "VERT_DATUM", "GEOIDMODEL" );
+                const char *pszDstProj4Geoids =
+                    oSRSDst.GetExtension( "VERT_DATUM", "GEOIDMODEL" );
+
+            // OGRCoordinateTransformationOptions options;
+            //  ListCoordinateOperations(oSRSSrc,  oSRSDst,  options );
+            }
+
             if( oSRSSrc.IsCompound() && pszSrcProj4Geoids == nullptr )
             {
                 CPLDebug("GDALWARP", "Source SRS is a compound CRS but lacks "
