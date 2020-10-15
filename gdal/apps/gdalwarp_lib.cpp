@@ -596,8 +596,6 @@ static GDALDatasetH ApplyVerticalShiftGrid( GDALDatasetH hWrkSrcDS,
             const char *pszDstProj4Geoids =
                 oSRSDst.GetExtension( "VERT_DATUM", "PROJ4_GRIDS" );
 
-
-            GEOIDMODEL
             if (pszSrcProj4Geoids == nullptr || pszDstProj4Geoids == nullptr) {
                 const char *pszSrcProj4Geoids =
                     oSRSSrc.GetExtension( "VERT_DATUM", "GEOIDMODEL" );
